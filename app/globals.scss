@@ -1,0 +1,22 @@
+main {
+  height: 100vmin;
+  width: 100vmin;
+  position: fixed;
+  inset: 0;
+
+  > div {
+    width: 100vmin;
+    height: 1vmin;
+
+    > div {
+      height: 1vmin;
+      width: 1vmin;
+      display: inline-block;
+
+      &:hover {
+        filter: brightness(.9);
+        cursor: pointer;
+      }
+    }
+  }
+}
