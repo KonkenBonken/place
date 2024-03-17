@@ -1,15 +1,17 @@
 const width = 100, height = 100;
 
+const grid = Array.from({ length: height }, () => Array.from<number>({ length: width }).fill(0xFFFFFF));
+
 export default function App() {
   return (
     <main>
-      {Array.from({ length: height }).fill(0).map((_, y) => (
-        <div key={y}>
-          {Array.from({ length: width }).fill(0).map((_, x) => (
-            <div key={x} />
-          ))}
-        </div>
-      ))}
+      {grid.map((row, y) =>
+        <div key={y}>{
+          row.map((clr, x) =>
+            <div key={x} style={{ backgroundColor: '#' + clr.toString(16) }} />
+          )
+        }</div>
+      )}
     </main>
   );
 }
