@@ -8,7 +8,7 @@ export default function App() {
       {grid.map((row, y) =>
         <div key={y}>{
           row.map((clr, x) =>
-            <div key={x} style={{ backgroundColor: '#' + clr.toString(16) }} />
+            <div key={x} style={clr !== 0xFFFFFF ? { backgroundColor: '#' + clr.toString(16) } : {}} />
           )
         }</div>
       )}
