@@ -1,3 +1,50 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals"
+  ],
+  "rules": {
+    "import/no-anonymous-default-export": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "no-throw-literal": "off",
+    "no-var": "off",
+    "no-loop-func": "off",
+    "semi": "warn",
+    "semi-spacing": "warn",
+    "semi-style": "warn",
+    "space-before-blocks": "warn",
+    "space-in-parens": "warn",
+    "jsx-quotes": "warn",
+    "max-statements-per-line": "warn",
+    "quotes": [
+      "warn",
+      "single"
+    ],
+    "eol-last": [
+      "warn",
+      "always"
+    ],
+    "space-before-function-paren": [
+      "warn",
+      "never"
+    ],
+    "array-element-newline": [
+      "warn",
+      "consistent"
+    ],
+    "brace-style": [
+      "warn",
+      "stroustrup",
+      {
+        "allowSingleLine": true
+      }
+    ],
+    "comma-dangle": [
+      "warn",
+      {
+        "arrays": "only-multiline",
+        "objects": "only-multiline"
+      }
+    ]
+  }
 }
