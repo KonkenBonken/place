@@ -3,7 +3,7 @@ import hasch from 'hasch';
 import palette, { Color, defaultColor } from './Color';
 
 export const
-  width = 100, height = 100,
+  width = 30, height = 30,
   grid = Array.from({ length: height }, () => Array.from<Color>({ length: width }).fill(defaultColor));
 
 export function hashGen(grid: Color[][]) {
