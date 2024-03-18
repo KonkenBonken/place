@@ -5,7 +5,11 @@ main#grid {
   width: 100vmin;
   height: 100vmin;
   position: fixed;
-  inset: 0;
+  top: calc(50vh - .25vmin);
+  left: calc(50vw - .25vmin);
+  translate: -50vmin -50vmin;
+  border: solid #000a .25vmin;
+  box-sizing: content-box;
 
   > div {
     width: 100vmin;
