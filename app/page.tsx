@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import useInterval from 'use-interval';
+
 import ColorPicker from './ColorPicker';
 import { stringToGrid, height, width } from './Grid';
 import { defaultColor, type Color } from './Color';
@@ -15,6 +17,8 @@ export default function App() {
     const gridString = await fetch('/api').then(res => res.text());
     setGrid(stringToGrid(gridString));
   }
+
+  useInterval(fetchGrid, 5000, true);
 
   return (<>
     <main id="grid">
