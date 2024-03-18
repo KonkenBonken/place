@@ -1,7 +1,7 @@
 $w: 100;
 $h: 100;
 
-main {
+main#grid {
   width: 100vmin;
   height: 100vmin;
   position: fixed;
@@ -30,5 +30,24 @@ main {
         }
       }
     }
+  }
+}
+
+section#picker {
+  position: fixed;
+  width: 40vmin;
+  height: 12vmin;
+  bottom: 2vmin;
+  left: calc(50vw - 20vmin);
+  display: grid;
+  gap: .1vmin;
+  padding: .2vmin;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  background-color: #000a;
+
+  > div {
+    background-color: #fff;
+    cursor: pointer;
   }
 }
