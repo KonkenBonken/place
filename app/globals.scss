@@ -11,6 +11,10 @@ main#grid {
   border: solid #000a .25vmin;
   box-shadow: #000 0 0 8vmin;
 
+  @media (aspect-ratio < 1) {
+    top: calc(40vh - .25vw);
+  }
+
   > div {
     width: 100vmin;
     height: 100vmin / $h;
@@ -51,6 +55,16 @@ section#picker {
   background-color: #000a;
   box-shadow: #000a 0 0 2vmin;
 
+  @media (aspect-ratio < 1) {
+    width: 100vw;
+    height: 20vh;
+    bottom: 0;
+    left: 0;
+    gap: .3vmin;
+    padding: .6vmin;
+    box-shadow: #000a 0 0 5vmin;
+  }
+
   > div {
     background-color: #fff;
     cursor: pointer;
@@ -69,10 +83,30 @@ section#picker {
     font-size: 1.7vh;
     font-family: sans-serif;
     animation:
-      slide cubic-bezier(0.3, 0.0, 0.3, 0.8) 2.5s 0s alternate 2 forwards,
+      slide-h cubic-bezier(0.3, 0.0, 0.3, 0.8) 2.5s 0s alternate 2 forwards,
       size cubic-bezier(0.4, 0.2, 1.0, 0.4) 2.5s 0s alternate 2 forwards;
 
-    @keyframes slide {
+    @media (aspect-ratio < 1) {
+      height: 5vh;
+      width: 100vw;
+      top: -6vh;
+      font-size: 5vw;
+      animation:
+        slide-v cubic-bezier(0.3, 0.0, 0.3, 0.8) 2.5s 0s alternate 2 forwards,
+        size cubic-bezier(0.4, 0.2, 1.0, 0.4) 2.5s 0s alternate 2 forwards;
+
+      @keyframes slide-v {
+        from {
+          top: 0;
+        }
+
+        20% {
+          top: -6vh;
+        }
+      }
+    }
+
+    @keyframes slide-h {
       from {
         top: 0;
       }
