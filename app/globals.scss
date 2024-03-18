@@ -20,7 +20,14 @@ main {
 
       &:hover {
         filter: brightness(.9);
-        cursor: pointer;
+      }
+
+      &.selected {
+        filter: brightness(.8);
+
+        &:hover {
+          filter: brightness(.7);
+        }
       }
     }
   }
