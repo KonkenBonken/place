@@ -18,7 +18,7 @@ export default function App() {
           row.map((clr, x) =>
             <div key={x} style={clr.style}
               className={`${x}-${y}` === selected ? 'selected' : undefined}
-              onClick={() => setSelected(`${x}-${y}`)}
+              onClick={() => `${x}-${y}` === selected ? setSelected(null) : setSelected(`${x}-${y}`)}
             />
           )
         }</div>
