@@ -1,16 +1,20 @@
+$w: 100;
+$h: 100;
+
 main {
-  height: 100vmin;
   width: 100vmin;
+  height: 100vmin;
   position: fixed;
   inset: 0;
 
   > div {
     width: 100vmin;
-    height: 1vmin;
+    height: 100vmin / $h;
+    cursor: pointer;
 
     > div {
-      height: 1vmin;
-      width: 1vmin;
+      width: 100vmin / $w;
+      height: 100vmin / $h;
       display: inline-block;
       background-color: #fff;
 
