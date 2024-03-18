@@ -53,5 +53,42 @@ section#picker {
   > div {
     background-color: #fff;
     cursor: pointer;
+    z-index: 2;
+  }
+
+  > section {
+    position: absolute;
+    height: 3vmin;
+    width: 40vmin;
+    top: -4vmin;
+    border: #000a solid .2vmin;
+    display: grid;
+    place-content: center;
+    background-color: darkorange;
+    font-size: 1.7vh;
+    font-family: sans-serif;
+    animation:
+      slide cubic-bezier(0.3, 0.0, 0.3, 0.8) 2.5s 0s alternate 2 forwards,
+      size cubic-bezier(0.4, 0.2, 1.0, 0.4) 2.5s 0s alternate 2 forwards;
+
+    @keyframes slide {
+      from {
+        top: 0;
+      }
+
+      20% {
+        top: -4vmin;
+      }
+    }
+
+    @keyframes size {
+      from {
+        scale: 0;
+      }
+
+      20% {
+        scale: 1;
+      }
+    }
   }
 }
