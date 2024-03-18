@@ -4,7 +4,7 @@ import { useState } from 'react';
 import useInterval from 'use-interval';
 
 import ColorPicker from './ColorPicker';
-import { stringToGrid, height, width } from './Grid';
+import { stringToGrid, height, width, hashGen } from './Grid';
 import { defaultColor, type Color } from './Color';
 
 
@@ -14,8 +14,11 @@ export default function App() {
   const [grid, setGrid] = useState(Array.from({ length: height }, () => Array.from<Color>({ length: width }).fill(defaultColor)));
 
   async function fetchGrid() {
-    const gridString = await fetch('/api').then(res => res.text());
-    setGrid(stringToGrid(gridString));
+    const res = await fetch(`/api/${hashGen(grid)}`);
+    if (res.status === 200) {
+      const gridString = await res.text();
+      setGrid(stringToGrid(gridString));
+    }
   }
 
   useInterval(fetchGrid, 5000, true);

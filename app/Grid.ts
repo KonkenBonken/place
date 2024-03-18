@@ -1,9 +1,14 @@
+import hasch from 'hasch';
+
 import palette, { Color, defaultColor } from './Color';
 
 export const
   width = 100, height = 100,
   grid = Array.from({ length: height }, () => Array.from<Color>({ length: width }).fill(defaultColor));
 
+export function hashGen(grid: Color[][]) {
+  return hasch(grid.flat().map(clr => clr.id).join('-'), { base: 36 });
+}
 
 export function gridToString() {
   return grid.flat().map(clr => clr.id).join('');
