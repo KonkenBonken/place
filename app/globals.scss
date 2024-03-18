@@ -9,7 +9,7 @@ main#grid {
   left: calc(50vw - .25vmin);
   translate: -50vmin -50vmin;
   border: solid #000a .25vmin;
-  box-sizing: content-box;
+  box-shadow: #000 0 0 8vmin;
 
   > div {
     width: 100vmin;
@@ -49,6 +49,7 @@ section#picker {
   grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(3, 1fr);
   background-color: #000a;
+  box-shadow: #000a 0 0 2vmin;
 
   > div {
     background-color: #fff;
