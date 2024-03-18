@@ -10,7 +10,7 @@ export default function ColorPicker({ selected, fetchGrid }: { selected: `${numb
     {palette.map((clr, i) => <div
       key={i} style={clr.style}
       onClick={() =>
-        fetch('/api', {
+        fetch('/api/paint', {
           method: 'POST',
           body: JSON.stringify({ x, y, id: clr.id })
         }).then(fetchGrid)
