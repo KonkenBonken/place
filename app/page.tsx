@@ -1,12 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { Color, defaultColor } from './Color';
 import ColorPicker from './ColorPicker';
-
-const width = 100, height = 100;
-
-const grid = Array.from({ length: height }, () => Array.from<Color>({ length: width }).fill(defaultColor));
+import { grid } from './Grid';
 
 export default function App() {
   const [selected, setSelected] = useState<`${number}-${number}` | null>(null);
