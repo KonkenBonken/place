@@ -1,6 +1,6 @@
 import palette from './Color';
 
-export default function ColorPicker({ selected }: { selected: `${number}-${number}` | null }) {
+export default function ColorPicker({ selected, fetchGrid }: { selected: `${number}-${number}` | null, fetchGrid(): void }) {
   if (!selected)
     return null;
 
@@ -13,7 +13,7 @@ export default function ColorPicker({ selected }: { selected: `${number}-${numbe
         fetch('/api', {
           method: 'POST',
           body: JSON.stringify({ x, y, id: clr.id })
-        })
+        }).then(fetchGrid)
       }
     />)}
   </section>;

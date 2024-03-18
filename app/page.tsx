@@ -36,6 +36,6 @@ export default function App() {
         }</div>
       )}
     </main>
-    <ColorPicker selected={selected} />
+    <ColorPicker selected={selected} fetchGrid={fetchGrid} />
   </>);
 }
