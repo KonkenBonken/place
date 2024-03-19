@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers';
 
-import { paint } from '@/app/Grid';
+import { paint } from '@/app/serverGrid';
 
 export async function POST(request: Request) {
   const { x, y, id } = await request.json();

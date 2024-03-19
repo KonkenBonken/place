@@ -4,7 +4,7 @@ import { useState } from 'react';
 import useInterval from 'use-interval';
 
 import ColorPicker from './ColorPicker';
-import { stringToGrid, height, width, hashGen } from './Grid';
+import { stringToGrid, height, width, hashGen } from './clientGrid';
 import { defaultColor, type Color } from './Color';
 
 

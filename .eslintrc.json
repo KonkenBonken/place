@@ -17,6 +17,7 @@
     "space-in-parens": "warn",
     "jsx-quotes": "warn",
     "max-statements-per-line": "warn",
+    "array-element-newline": "off",
     "quotes": [
       "warn",
       "single"
@@ -28,10 +29,6 @@
     "space-before-function-paren": [
       "warn",
       "never"
-    ],
-    "array-element-newline": [
-      "warn",
-      "consistent"
     ],
     "brace-style": [
       "warn",

@@ -1,4 +1,4 @@
-import { gridToString, hashGen, grid } from '@/app/Grid';
+import { gridToString, hashGen, grid } from '@/app/serverGrid';
 
 export async function GET(_: Request, { params: { hash: lastHash } }: { params: { hash: string } }) {
   if (lastHash === hashGen(grid))
