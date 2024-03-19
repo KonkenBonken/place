@@ -1,10 +1,11 @@
+import fs from 'fs';
 import hasch from 'hasch';
 
-import palette, { Color, defaultColor } from './Color';
+import palette, { Color, defaultColorId } from './Color';
 
-export const
-  width = 30, height = 30,
-  grid = Array.from({ length: height }, () => Array.from<Color>({ length: width }).fill(defaultColor));
+const width = 30, height = 30;
+
+export const grid = stringToGrid(fs.readFileSync('img.txt', 'utf8') || defaultColorId.repeat(width * height));
 
 export function hashGen(grid: Color[][]) {
   return hasch(grid.flat().map(clr => clr.id).join('-'), { base: 36 });
@@ -33,6 +34,8 @@ export function paint(x: number, y: number, colorId: string) {
     return false;
 
   grid[y][x] = palette[colorIndex];
+
+  fs.promises.writeFile('img.txt', gridToString());
 
   return true;
 }

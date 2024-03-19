@@ -30,4 +30,5 @@ const palette = [
 
 export default palette;
 
-export const defaultColor = palette[6];
+export const defaultColor = palette[6],
+  defaultColorId = defaultColor.id;
